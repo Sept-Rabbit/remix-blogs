@@ -1,0 +1,185 @@
+---
+title: this in Javascript
+date: 2023-07-29
+meta:
+  [
+    title: this in Javascript,
+    description: this acts differently in Javascript and it is difficult to understand. But it is an important keyword in Javascript.,
+  ]
+---
+
+# {attributes.title}
+
+Date: {attributes.date.toDateString()} &nbsp;
+
+"this" is one of the difficult concept to learn in JavaScript.
+
+What is "this"? &nbsp;
+this is a keyword in JavaScript fuction. It has different value in different situation. So, it's confusing for Javascript beginners.
+
+Example 1
+
+```js
+var name = "Jack";
+console.log(this.name); //"Jack"
+```
+
+In this example, this will look for "name" (global variable) under window, so the result is "Jack."
+
+Let's try to console.log(this) and see the result.
+
+```js
+console.log(this);
+```
+
+<img src="https://i.imgur.com/BUDvLne.png" />
+The result is Window.
+<img src="https://i.imgur.com/9gqMYEO.png" />
+So this refers to Window and this will look for name in global scope. That's why
+this.name is Jack.
+
+Let's see another example. What is this is inside a function?
+
+Example 2
+
+```js
+var name = "Jack";
+function namefu() {
+  console.log(this.name);
+}
+
+namefu();
+```
+
+The result is same as example 1, this.name is "Jack". Why?
+
+<img src="https://i.imgur.com/J2r4zMz.png" />
+
+In example 2, this also refers to Window and like example 1, this will look for name in global scope.
+
+Example 3
+
+In strict mode, when this points to Window, the result will be undefined.
+
+```js
+"use strict";
+var name = "Jack";
+function namefu() {
+  console.log(this.name);
+}
+
+namefu();
+```
+
+<img src="https://i.imgur.com/mQ9vsqR.png" />
+
+What if we put name in the function?
+
+```js
+"use strict";
+
+function namefu() {
+  var name = "Jack";
+  console.log(this.name);
+}
+namefu();
+```
+
+<img src="https://i.imgur.com/mQ9vsqR.png" />
+
+The result is also undefined. Because like example 2, this refers to Window.
+
+<img src="https://i.imgur.com/J2r4zMz.png" />
+
+Then how do we fix the undefined issue in strict mode?
+
+```js
+"use strict";
+
+var name = "Jack";
+function namefu() {
+  console.log(this.name);
+}
+
+var a = {
+  name: "Ray",
+  myname: namefu,
+};
+a.myname();
+```
+
+<img src="https://i.imgur.com/YHOVvHo.png" />
+
+We can see this.name is Ray because the owner of method myname is object a, so this refers to object a and will look for name inside object a.
+
+<img src="https://i.imgur.com/g0d4pmK.png" />
+
+## Object
+
+Example 1
+
+```js
+var name = "Jack";
+var obj = {
+  x: this.name,
+};
+obj.x;
+```
+
+The result is Jack.
+
+Example 2
+
+What if the code is like this?
+
+```js
+var name = "Jack";
+var obj = {
+  x: function () {
+    name = "Ray";
+    console.log(this.name);
+  },
+  y: "2",
+};
+
+obj.x();
+```
+
+The result is undefined.
+
+<img src="https://i.imgur.com/EFXCmA8.png" />
+
+This will look for the name in obj and because there is no name property in obj, it returns undefined.
+
+So if there is name property in obj, then the result will be Ray.
+
+```js
+var name = "Jack";
+var obj = {
+  x: function () {
+    console.log(this.name);
+  },
+  y: "2",
+  name: "Ray",
+};
+
+obj.x();
+```
+
+<img src="https://i.imgur.com/1iJ7Xfv.png" />
+
+However, the example below will return differently.
+
+```js
+var name = "Jack";
+var obj = {
+  x: function () {
+    name = "Ray";
+    console.log(this.name);
+  },
+  y: "2",
+};
+
+var a = obj.x;
+a();
+```

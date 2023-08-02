@@ -1,0 +1,69 @@
+---
+title: Hoisting in Javascript
+date: 2023-07-29
+meta:
+  [
+    title: Hoisting in Javascript,
+    description: Hoisting is JavaScript's default behavior of moving declarations to the top. It is an important concept in Javascript.,
+  ]
+---
+
+## {attributes.title}
+
+{attributes.date.toDateString()} &nbsp;
+
+There is a special concept, Hoisting, in Javascript.
+
+The explanation in MDN:
+JavaScript Hoisting refers to the process whereby the interpreter allocates memory for variable and function declarations prior to execution of the code.
+
+So we know Hoisting is related to memory. Javascript will move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code, and then assign value or process.
+
+### Example (var)
+
+```js
+console.log(a);
+var a = 1;
+```
+
+Above is a common Hoisting example and console.log(a) is undefined.
+
+We can break down the process as below.
+
+```js
+var a;
+console.log(a);
+a = 1;
+```
+
+<img src="https://i.imgur.com/qi6QUjJ.png" />
+
+var a is moved to above console.log(a) but because a hasn't been assigned any value, the result is undefined.
+
+### Example (Function)
+
+```js
+a();
+
+function a() {
+  console.log("Jack");
+}
+```
+
+This is another common Hoisting example. Basically, the code execution starts from top to bottom. Due to Hoisting, now function will be moved to before a().
+
+But the variable (var) in function will be created when function is invoked. After function is executed, variable will be destroyed and save the memory.
+
+```js
+function a() {
+  console.log("Jack");
+}
+
+a();
+```
+
+&nbsp; &nbsp; &nbsp;{" "}
+
+### Reference
+
+https://israynotarray.com/javascript/20190419/3635730318/
