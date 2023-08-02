@@ -18,28 +18,28 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
   };
 
   return (
-    <div className="flex w-1/5 justify-end text-gray-600 bg-gray-50">
-      <main className="w-full my-12">
-        <button
+    <div className="flex lg:w-1/5 w-screen text-gray-600 bg-gray-50">
+      <main className="w-full h-full my-12">
+        {/* <button
           onClick={handleSidebarCloseButton}
-          className="w-10 p-1.5 h-10 ml-10 mb-10 border border-gray-300 rounded-lg cursor-pointer"
+          className="hidden lg:block w-10 p-1.5 h-10 ml-16 mb-10 border border-gray-300 rounded-lg cursor-pointer"
         >
           <ChevronLeft />
-        </button>
+        </button> */}
 
         <ul
           className={`${
             clicked
-              ? "-translate-x-[12rem] transition-all duration-1000 ease-in-out"
+              ? "-translate-x-[14rem] transition-all duration-1000 ease-in-out"
               : "translate-x-0 transition-all duration-1000 ease-in-out"
-          } text-left ml-12 flex flex-col space-y-5 text-base`}
+          } text-left flex lg:mt-20 flex-row w-full lg:flex-col space-x-5 ml-20 lg:ml-0 lg:space-x-0 lg:space-y-10 text-base`}
         >
           <Link to="/">
-            <li className="flex items-center cursor-pointer">
+            <li className="flex items-center justify-center cursor-pointer lg:w-full">
               <span className="mr-5">
                 <HomeIcon />
               </span>
-              Home
+              <h5 className="w-20">Home</h5>
             </li>
           </Link>
           {/* <li className="flex items-center cursor-pointer">
@@ -50,12 +50,12 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
           </li> */}
           <li
             onClick={() => setSearchClicked(!searchClicked)}
-            className="flex items-center cursor-pointer"
+            className="flex items-center justify-center cursor-pointer lg:w-full"
           >
             <span className="mr-5">
               <SearchIcon />
             </span>
-            Search
+            <h5 className="w-20">Search</h5>
           </li>
         </ul>
       </main>

@@ -29,12 +29,12 @@ export default function Index() {
   setBlogPosts(posts);
 
   return (
-    <div className="relative bg-white flex flex-col h-full text-center">
-      <main className="w-full my-10">
-        <h1 className="text-gray-400 text-2xl">
+    <div className="relative bg-white flex flex-col h-full lg:h-full text-center">
+      <main className="w-full px-20 h-full">
+        <h1 className="text-gray-400 mt-10 text-2xl">
           Welcome to My Javascript Blog
         </h1>
-        <ul className="grid grid-cols-3 gap-5 my-20 px-10">
+        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5 space-y-10 lg:space-y-0 my-20 lg:px-10">
           {posts.map((post: BlogPost) => (
             <Card post={post} key={post.slug} />
           ))}
