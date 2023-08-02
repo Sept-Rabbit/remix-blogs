@@ -18,8 +18,8 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
   };
 
   return (
-    <div className="flex lg:w-1/5 text-gray-600 bg-gray-50">
-      <main className="w-full h-full my-12">
+    <div className="text-gray-600 bg-gray-50 lg:h-screen">
+      <main>
         {/* <button
           onClick={handleSidebarCloseButton}
           className="hidden lg:block w-10 p-1.5 h-10 ml-16 mb-10 border border-gray-300 rounded-lg cursor-pointer"
@@ -32,10 +32,10 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
             clicked
               ? "-translate-x-[14rem] transition-all duration-1000 ease-in-out"
               : "translate-x-0 transition-all duration-1000 ease-in-out"
-          } text-left flex lg:mt-20 flex-row w-full lg:flex-col space-x-5 ml-20 lg:ml-0 lg:space-x-0 lg:space-y-10 sm:text-2xl lg:text-base`}
+          } flex lg:flex-col lg:items-center sm:flex-row lg:justify-center py-8 w-full lg:space-x-0 p-20 sm:space-x-5 lg:space-y-5 lg:mt-10 sm:text-2xl lg:text-base`}
         >
           <Link to="/">
-            <li className="flex items-center justify-center cursor-pointer lg:w-full">
+            <li className="flex items-center cursor-pointer">
               <span className="mr-5">
                 <HomeIcon />
               </span>
@@ -50,7 +50,7 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
           </li> */}
           <li
             onClick={() => setSearchClicked(!searchClicked)}
-            className="flex items-center justify-center cursor-pointer lg:w-full"
+            className="flex items-center cursor-pointer"
           >
             <span className="mr-5">
               <SearchIcon />

@@ -5,7 +5,7 @@ export const links = () => [{ rel: "stylesheet", href: styles }];
 
 export default function Javascript() {
   return (
-    <div className="prose lg-prose-xl py-10 mx-auto lg:w-4/5">
+    <div className="prose prose-2xl lg:prose-lg py-10 sm:px-10 lg:px-0 mx-auto lg:w-2/3">
       <Outlet />
     </div>
   );

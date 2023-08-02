@@ -29,9 +29,9 @@ export default function Index() {
   setBlogPosts(posts);
 
   return (
-    <div className="bg-white flex flex-col w-screen h-full px-20">
+    <div className="bg-white flex flex-col px-20">
       <main className="reltaive">
-        <h1 className="text-gray-400 mt-10 sm:text-3xl lg:text-2xl">
+        <h1 className="text-gray-400 mt-10 ml-10 text-3xl">
           Welcome to My Javascript Blog
         </h1>
         <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5 space-y-10 lg:space-y-0 my-20 lg:px-10">

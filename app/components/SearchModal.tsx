@@ -50,12 +50,12 @@ export const SearchModal = ({
             >
               <SearchIcon />
               <input
-                className="text-base font-medium leading-6 w-full px-5 focus:outline-none bg-gray-700"
+                className="lg:text-base sm:text-3xl font-medium leading-6 w-full px-5 focus:outline-none bg-gray-700"
                 placeholder="Search Article"
                 id="modal-title"
                 onChange={handleInput}
               />
-              <div className="flex justify-end text-xs text-gray-400 bg-gray-600 p-1 rounded-lg">
+              <div className="flex justify-end lg:text-xs sm:text-base text-gray-400 bg-gray-600 p-1 rounded-lg">
                 <button onClick={() => setSearchClicked(!searchClicked)}>
                   ESC
                 </button>
@@ -66,7 +66,7 @@ export const SearchModal = ({
               {filteredPosts?.map((post: BlogPost) => (
                 <li
                   key={post.slug}
-                  className="cursor-pointer my-2 hover:bg-indigo-500 bg-gray-600/20 p-3 rounded-lg"
+                  className="cursor-pointer my-2 hover:bg-indigo-500 bg-gray-600/20 p-3 rounded-lg lg:text-base sm:text-3xl"
                   onClick={() => handleRedirect(post)}
                 >
                   {post.title}
