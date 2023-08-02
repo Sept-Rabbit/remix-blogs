@@ -29,9 +29,9 @@ export default function Index() {
   setBlogPosts(posts);
 
   return (
-    <div className="relative bg-white flex flex-col h-full lg:h-full text-center">
-      <main className="w-full px-20 h-full">
-        <h1 className="text-gray-400 mt-10 text-2xl">
+    <div className="bg-white flex flex-col w-screen h-full px-20">
+      <main className="reltaive">
+        <h1 className="text-gray-400 mt-10 sm:text-3xl lg:text-2xl">
           Welcome to My Javascript Blog
         </h1>
         <ul className="grid grid-cols-1 lg:grid-cols-3 gap-5 space-y-10 lg:space-y-0 my-20 lg:px-10">
@@ -39,10 +39,10 @@ export default function Index() {
             <Card post={post} key={post.slug} />
           ))}
         </ul>
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-5">
+          <Footer />
+        </div>
       </main>
-      <div className="absolute bottom-5 w-full">
-        <Footer />
-      </div>
     </div>
   );
 }
