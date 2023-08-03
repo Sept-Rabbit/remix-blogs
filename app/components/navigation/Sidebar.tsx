@@ -18,8 +18,8 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
   };
 
   return (
-    <div className="text-gray-600 bg-gray-50 lg:h-screen">
-      <main>
+    <nav className="text-gray-600 bg-gray-50 lg:h-screen flex flex-none">
+      <div>
         {/* <button
           onClick={handleSidebarCloseButton}
           className="hidden lg:block w-10 p-1.5 h-10 ml-16 mb-10 border border-gray-300 rounded-lg cursor-pointer"
@@ -58,7 +58,7 @@ export const Sidebar = ({ searchClicked, setSearchClicked }: SidebarProp) => {
             <h5 className="w-20">Search</h5>
           </li>
         </ul>
-      </main>
-    </div>
+      </div>
+    </nav>
   );
 };

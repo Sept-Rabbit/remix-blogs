@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <div className="text-center text-sm text-gray-800">
-      <p>
+    <footer className="text-center">
+      <p className="text-sm sm:text-lg text-gray-800">
         Blog content courtey of my dearest TA:{" "}
         <a
           target="_blank"
@@ -13,6 +13,6 @@ export const Footer = () => {
         </a>{" "}
         Please visit and support him.
       </p>
-    </div>
+    </footer>
   );
 };

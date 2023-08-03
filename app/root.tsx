@@ -54,7 +54,7 @@ function Layout({ children }: LayoutProps) {
   const [searchClicked, setSearchClicked] = useState(false);
 
   return (
-    <div className="flex sm:flex-col lg:flex-row">
+    <main className="flex sm:flex-col lg:flex-row h-screen overflow-hidden">
       <Sidebar
         searchClicked={searchClicked}
         setSearchClicked={setSearchClicked}
@@ -65,8 +65,8 @@ function Layout({ children }: LayoutProps) {
           setSearchClicked={setSearchClicked}
         />
       )}
-      <div className="w-full">{children}</div>
-    </div>
+      <div className="w-full flex flex-grow">{children}</div>
+    </main>
   );
 }
 

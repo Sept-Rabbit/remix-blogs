@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 html {
-    @apply h-screen;
-  }
-  body {
-    @apply h-screen;
-  }
+    @apply h-full
+}
+  
