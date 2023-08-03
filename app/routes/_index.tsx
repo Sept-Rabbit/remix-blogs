@@ -29,7 +29,7 @@ export default function Index() {
   setBlogPosts(posts);
 
   return (
-    <div className="bg-white flex flex-col px-20">
+    <div className="bg-white flex flex-col px-20 overflow-hidden">
       <div className="flex flex-col">
         <div>
           <h1 className="text-gray-400 mt-10 ml-10 text-3xl">
@@ -43,7 +43,7 @@ export default function Index() {
           </ul>
         </div>
       </div>
-      <footer className="text-center mt-auto mb-5">
+      <footer className="text-center mt-auto mb-20">
         <p className="text-sm sm:text-lg text-gray-800">
           Blog content courtey of my dearest TA:{" "}
           <a
